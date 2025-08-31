@@ -27,4 +27,17 @@ public class CalculadoraFinanzas {
 	public void setInversion(double inversion) {
 		this.inversion = inversion;
 	}
+	 public double calcularGananciaNeta() {
+        return ingresos - gastos;
+    }
+
+    public double calcularMargenRentabilidad() {
+        if (ingresos == 0) return 0;
+        return (calcularGananciaNeta() / ingresos) * 100;
+    }
+
+    public double calcularROI() {
+        if (inversion == 0) return 0;
+        return (calcularGananciaNeta() / inversion) * 100;
+    }
 }
