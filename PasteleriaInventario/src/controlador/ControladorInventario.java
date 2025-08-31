@@ -38,7 +38,7 @@ public class ControladorInventario {
             producto.setCantidad(nuevaCantidad);
             System.out.println("Cantidad del producto " + nombre + " actualizada.");
         } else {
-            System.out.println("El producto no existe o la cantidad es inválida.");
+            System.out.println("El producto no existe ó la cantidad es inválida.");
         }
     }
 
