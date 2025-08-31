@@ -1,16 +1,30 @@
 package finanzas;
-import java.util.List;
 
 public class EstadoFinanciero {
-  public static double promedioGanancias(List<EstadoFinanciero> estados) {
-        return estados.stream().mapToDouble(EstadoFinanciero::getGanancias).average().orElse(0);
-    }
-
-    public static double promedioMargen(List<EstadoFinanciero> estados) {
-        return estados.stream().mapToDouble(EstadoFinanciero::getMargen).average().orElse(0);
-    }
-
-    public static EstadoFinanciero mejorPeriodo(List<EstadoFinanciero> estados) {
-        return estados.stream().max((a, b) -> Double.compare(a.getGanancias(), b.getGanancias())).orElse(null);
-    }
+    private double ingresos;
+    private double gastos;
+    private double inversion;
+	public CalculadoraFinanzas(double ingresos, double gastos, double inversion) {
+		this.ingresos = ingresos;
+		this.gastos = gastos;
+		this.inversion = inversion;
+	}
+	public double getIngresos() {
+		return ingresos;
+	}
+	public void setIngresos(double ingresos) {
+		this.ingresos = ingresos;
+	}
+	public double getGastos() {
+		return gastos;
+	}
+	public void setGastos(double gastos) {
+		this.gastos = gastos;
+	}
+	public double getInversion() {
+		return inversion;
+	}
+	public void setInversion(double inversion) {
+		this.inversion = inversion;
+	}
 }
