@@ -1,5 +1,5 @@
 package controlador; //sebastian
-
+//JAJAJJA MIRA ESTO
 public class ControladorGanancias {
 //soy sebastian, puse algo de código, se ve? a ver ahora como lo probamos XD
     private double ingresosTotales;
