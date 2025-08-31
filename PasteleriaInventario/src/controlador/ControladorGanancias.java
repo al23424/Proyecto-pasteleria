@@ -1,5 +1,5 @@
 package controlador; //sebastian
-//JAJAJJA MIRA ESTO
+
 public class ControladorGanancias {
     private double ingresosTotales;
     private double costosTotales;
