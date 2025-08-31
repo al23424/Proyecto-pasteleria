@@ -1,43 +1,54 @@
 package vista;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 public class MenuPrincipal extends JFrame {
 
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
+    private JPanel panelPrincipal;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MenuPrincipal frame = new MenuPrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    /**
+     * Ventana principal del sistema con acceso a los módulos.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(() -> {
+            try {
+                MenuPrincipal frame = new MenuPrincipal();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public MenuPrincipal() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+    public MenuPrincipal() {
+        setTitle("Menú Principal");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(200, 200, 500, 350);
+        panelPrincipal = new JPanel();
+        panelPrincipal.setBorder(new EmptyBorder(10, 10, 10, 10));
+        setContentPane(panelPrincipal);
+        panelPrincipal.setLayout(null);
 
-	}
+        JLabel lblTitulo = new JLabel("Bienvenido al Sistema");
+        lblTitulo.setBounds(180, 30, 200, 20);
+        panelPrincipal.add(lblTitulo);
 
+        JButton btnVentas = new JButton("Ventas");
+        btnVentas.setBounds(180, 80, 120, 25);
+        panelPrincipal.add(btnVentas);
+
+        JButton btnInventario = new JButton("Inventario");
+        btnInventario.setBounds(180, 120, 120, 25);
+        panelPrincipal.add(btnInventario);
+
+        JButton btnGanancias = new JButton("Ganancias");
+        btnGanancias.setBounds(180, 160, 120, 25);
+        panelPrincipal.add(btnGanancias);
+
+        JButton btnPerdidas = new JButton("Pérdidas");
+        btnPerdidas.setBounds(180, 200, 120, 25);
+        panelPrincipal.add(btnPerdidas);
+    }
 }
