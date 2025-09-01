@@ -8,8 +8,7 @@ public class EstadoFinanciero {
         this.ingresos = ingresos;
         this.gastos = gastos;
     }
-
-    // Getters y Setters
+   
     public double getIngresos() {
         return ingresos;
     }
@@ -24,5 +23,10 @@ public class EstadoFinanciero {
 
     public void setGastos(double gastos) {
         this.gastos = gastos;
+    }
+
+    public double getMargen() {
+        if (ingresos == 0) return 0; 
+        return (getGanancias() / ingresos) * 100;
     }
 }
