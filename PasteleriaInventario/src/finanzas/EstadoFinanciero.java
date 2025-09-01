@@ -2,7 +2,7 @@ package finanzas;
 
 public class EstadoFinanciero {
    private double ingresos;
-    private double gastos;
+   private double gastos;
 
     public EstadoFinanciero(double ingresos, double gastos) {
         this.ingresos = ingresos;
