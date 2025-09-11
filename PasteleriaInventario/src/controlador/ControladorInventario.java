@@ -1,8 +1,9 @@
+// Archivo: ControladorInventario.java
 package controlador;
 
 import java.util.HashMap;
 import java.util.Map;
-//sebastian
+
 public class ControladorInventario {
 
     private Map<String, Producto> inventario;
@@ -16,6 +17,7 @@ public class ControladorInventario {
         if (cantidad > 0 && precio > 0) {
             Producto producto = new Producto(nombre, precio, cantidad);
             inventario.put(nombre, producto);
+            System.out.println("Producto " + nombre + " agregado exitosamente.");
         } else {
             System.out.println("La cantidad y el precio deben ser mayores a 0.");
         }
@@ -38,7 +40,18 @@ public class ControladorInventario {
             producto.setCantidad(nuevaCantidad);
             System.out.println("Cantidad del producto " + nombre + " actualizada.");
         } else {
-            System.out.println("El producto no existe ó la cantidad es inválida.");
+            System.out.println("El producto no existe o la cantidad es inválida.");
+        }
+    }
+
+    // Actualizar el precio de un producto
+    public void actualizarPrecio(String nombre, double nuevoPrecio) {
+        if (inventario.containsKey(nombre) && nuevoPrecio > 0) {
+            Producto producto = inventario.get(nombre);
+            producto.setPrecio(nuevoPrecio);
+            System.out.println("Precio del producto " + nombre + " actualizado.");
+        } else {
+            System.out.println("El producto no existe o el precio es inválido.");
         }
     }
 
@@ -52,15 +65,40 @@ public class ControladorInventario {
         }
     }
 
+    // Obtener un producto (útil para otras operaciones)
+    public Producto obtenerProducto(String nombre) {
+        return inventario.get(nombre);
+    }
+
+    // Verificar si existe un producto
+    public boolean existeProducto(String nombre) {
+        return inventario.containsKey(nombre);
+    }
+
     // Mostrar todos los productos del inventario
     public void mostrarInventario() {
         if (inventario.isEmpty()) {
             System.out.println("El inventario está vacío.");
         } else {
-            System.out.println("Inventario:");
+            System.out.println("=== INVENTARIO ===");
             for (Producto producto : inventario.values()) {
                 System.out.println(producto);
             }
+            System.out.println("==================");
         }
+    }
+
+    // Obtener el número total de productos
+    public int getTotalProductos() {
+        return inventario.size();
+    }
+
+    // Calcular el valor total del inventario
+    public double calcularValorTotal() {
+        double valorTotal = 0;
+        for (Producto producto : inventario.values()) {
+            valorTotal += producto.getPrecio() * producto.getCantidad();
+        }
+        return valorTotal;
     }
 }
