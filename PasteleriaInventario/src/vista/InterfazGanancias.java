@@ -26,7 +26,7 @@ public class InterfazGanancias extends JFrame {
             }
         });
     }
-
+//realizamos el calculo correspondiente
     public InterfazGanancias() {
         setTitle("Cálculo de Ganancias");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
